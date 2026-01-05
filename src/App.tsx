@@ -3,7 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import TopNav from "@/components/layout/TopNav";
+
 import BottomNav from "@/components/layout/BottomNav";
 import FloatingChat from "@/components/layout/FloatingChat";
 import Index from "./pages/Index";
@@ -22,8 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <TopNav />
-        <div className="pt-14">
+        <div>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/fleet" element={<FleetPage />} />
