@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import TopNav from "@/components/layout/TopNav";
 import BottomNav from "@/components/layout/BottomNav";
 import Index from "./pages/Index";
 import FleetPage from "./pages/FleetPage";
@@ -20,15 +21,18 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/fleet" element={<FleetPage />} />
-          <Route path="/book" element={<BookPage />} />
-          <Route path="/hotels" element={<HotelsPage />} />
-          <Route path="/explore" element={<ExplorePage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <TopNav />
+        <div className="pt-14">
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/fleet" element={<FleetPage />} />
+            <Route path="/book" element={<BookPage />} />
+            <Route path="/hotels" element={<HotelsPage />} />
+            <Route path="/explore" element={<ExplorePage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
         <BottomNav />
       </BrowserRouter>
     </TooltipProvider>
