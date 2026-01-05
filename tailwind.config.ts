@@ -94,12 +94,17 @@ export default {
           from: { transform: "translateX(-100%)" },
           to: { transform: "translateX(0)" },
         },
+        "bounce-subtle": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-6px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "slide-left": "slide-left 0.3s ease-out",
         "slide-right": "slide-right 0.3s ease-out",
+        "bounce-subtle": "bounce-subtle 2s ease-in-out infinite",
       },
       spacing: {
         "safe-bottom": "env(safe-area-inset-bottom, 20px)",
