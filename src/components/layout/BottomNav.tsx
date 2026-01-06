@@ -1,4 +1,4 @@
-import { Bike, CalendarCheck, Building2, MapPin, Phone } from "lucide-react";
+import { Bike, CalendarCheck, Building2, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
@@ -6,7 +6,7 @@ const navItems = [
   { icon: Bike, label: "Our Fleet", path: "/fleet" },
   { icon: CalendarCheck, label: "Book Now", path: "/book", primary: true },
   { icon: Building2, label: "Partner Hotels", path: "/hotels" },
-  { icon: MapPin, label: "Explore Digha", path: "/explore" },
+  { icon: null, label: "Explore Digha", path: "/explore" },
   { icon: Phone, label: "Contact", path: "/contact" },
 ];
 
@@ -50,7 +50,7 @@ const BottomNav = () => {
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
-              <Icon className="w-5 h-5" />
+              {Icon && <Icon className="w-5 h-5" />}
               <span className="text-xs font-medium">{item.label}</span>
             </Link>
           );
