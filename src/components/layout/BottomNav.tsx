@@ -42,9 +42,8 @@ const BottomNav = () => {
             return (
               <div
                 key={item.label}
-                className="flex flex-col items-center gap-1 py-2 px-3 text-muted-foreground"
+                className="flex flex-col items-center justify-center py-2 px-3 text-muted-foreground"
               >
-                <Icon className="w-5 h-5" />
                 <span className="text-xs font-medium">{item.label}</span>
               </div>
             );
