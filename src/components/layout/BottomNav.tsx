@@ -6,7 +6,7 @@ const navItems = [
   { icon: Bike, label: "Our Fleet", path: "/fleet" },
   { icon: CalendarCheck, label: "Book Now", path: "/book", primary: true },
   { icon: Building2, label: "Partner Hotels", path: "/hotels" },
-  { icon: MapPin, label: "Explore Digha", path: null },
+  { icon: MapPin, label: "Explore Digha", path: "/explore" },
   { icon: Phone, label: "Contact", path: "/contact" },
 ];
 
@@ -38,16 +38,6 @@ const BottomNav = () => {
             );
           }
 
-          if (!item.path) {
-            return (
-              <div
-                key={item.label}
-                className="flex flex-col items-center justify-center py-2 px-3 text-muted-foreground"
-              >
-                <span className="text-xs font-medium">{item.label}</span>
-              </div>
-            );
-          }
 
           return (
             <Link
