@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 import hotel1 from "@/assets/hotel-1.jpg";
-import hotel2 from "@/assets/hotel-2.jpg";
-import hotel3 from "@/assets/hotel-3.jpg";
 
 const hotels = [
   {
@@ -12,27 +10,8 @@ const hotels = [
     name: "Hotel Sea Hawk",
     location: "Old Digha",
     rating: 4.5,
-    price: 1500,
     image: hotel1,
     tags: ["Beach View", "AC Rooms", "Restaurant"],
-  },
-  {
-    id: 2,
-    name: "Digha Beach Resort",
-    location: "New Digha",
-    rating: 4.3,
-    price: 2200,
-    image: hotel2,
-    tags: ["Pool", "Spa", "Beach Access"],
-  },
-  {
-    id: 3,
-    name: "Hotel Ocean View",
-    location: "Old Digha",
-    rating: 4.1,
-    price: 1200,
-    image: hotel3,
-    tags: ["Sea Facing", "WiFi", "Parking"],
   },
 ];
 
@@ -41,10 +20,14 @@ const PartnerHotels = () => {
     <section className="py-10 px-4 bg-card">
       <div className="text-center mb-6">
         <h2 className="font-heading font-bold text-2xl text-foreground">
-          Where to Stay in Digha
+          Our Partner Hotels
         </h2>
         <p className="text-muted-foreground text-sm mt-2 max-w-xs mx-auto">
-          Get up to <span className="text-accent font-semibold">10% additional discount</span> on partner hotel bookings
+          Get up to{" "}
+          <span className="text-accent font-semibold">
+            10% additional discount
+          </span>{" "}
+          on partner hotel bookings
         </p>
       </div>
 
@@ -52,8 +35,7 @@ const PartnerHotels = () => {
         {hotels.map((hotel) => (
           <div
             key={hotel.id}
-            className="bg-background rounded-2xl shadow-card overflow-hidden"
-          >
+            className="bg-background rounded-2xl shadow-card overflow-hidden">
             {/* Image */}
             <div className="relative h-44">
               <img
@@ -82,8 +64,7 @@ const PartnerHotels = () => {
                 {hotel.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md"
-                  >
+                    className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md">
                     {tag}
                   </span>
                 ))}
@@ -91,15 +72,10 @@ const PartnerHotels = () => {
 
               {/* Price & CTA */}
               <div className="flex items-center justify-between mt-4">
-                <div>
-                  <span className="text-secondary font-bold text-lg">₹{hotel.price}</span>
-                  <span className="text-muted-foreground text-sm">/night</span>
-                </div>
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
-                >
+                  className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground">
                   <ExternalLink className="w-4 h-4 mr-1" />
                   View
                 </Button>

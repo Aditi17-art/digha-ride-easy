@@ -19,9 +19,23 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const timeSlots = [
-  "06:00 AM", "07:00 AM", "08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM",
-  "12:00 PM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM",
-  "06:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"
+  "06:00 AM",
+  "07:00 AM",
+  "08:00 AM",
+  "09:00 AM",
+  "10:00 AM",
+  "11:00 AM",
+  "12:00 PM",
+  "01:00 PM",
+  "02:00 PM",
+  "03:00 PM",
+  "04:00 PM",
+  "05:00 PM",
+  "06:00 PM",
+  "07:00 PM",
+  "08:00 PM",
+  "09:00 PM",
+  "10:00 PM",
 ];
 
 const SearchRide = () => {
@@ -32,8 +46,8 @@ const SearchRide = () => {
   const [dropoffTime, setDropoffTime] = useState<string>();
 
   const handleSearch = () => {
-    navigate("/fleet", { 
-      state: { pickupDate, pickupTime, dropoffDate, dropoffTime } 
+    navigate("/fleet", {
+      state: { pickupDate, pickupTime, dropoffDate, dropoffTime },
     });
   };
 
@@ -57,8 +71,7 @@ const SearchRide = () => {
                   className={cn(
                     "flex-1 flex items-center gap-3 px-4 py-3.5 bg-muted rounded-xl border border-border text-left transition-colors hover:border-primary/50",
                     !pickupDate && "text-muted-foreground"
-                  )}
-                >
+                  )}>
                   <CalendarIcon className="w-5 h-5 text-muted-foreground" />
                   <span className="text-sm">
                     {pickupDate ? format(pickupDate, "dd MMM yyyy") : "Date"}
@@ -87,7 +100,9 @@ const SearchRide = () => {
               </SelectTrigger>
               <SelectContent>
                 {timeSlots.map((time) => (
-                  <SelectItem key={time} value={time}>{time}</SelectItem>
+                  <SelectItem key={time} value={time}>
+                    {time}
+                  </SelectItem>
                 ))}
               </SelectContent>
             </Select>
@@ -107,8 +122,7 @@ const SearchRide = () => {
                   className={cn(
                     "flex-1 flex items-center gap-3 px-4 py-3.5 bg-muted rounded-xl border border-border text-left transition-colors hover:border-primary/50",
                     !dropoffDate && "text-muted-foreground"
-                  )}
-                >
+                  )}>
                   <CalendarIcon className="w-5 h-5 text-muted-foreground" />
                   <span className="text-sm">
                     {dropoffDate ? format(dropoffDate, "dd MMM yyyy") : "Date"}
@@ -137,7 +151,9 @@ const SearchRide = () => {
               </SelectTrigger>
               <SelectContent>
                 {timeSlots.map((time) => (
-                  <SelectItem key={time} value={time}>{time}</SelectItem>
+                  <SelectItem key={time} value={time}>
+                    {time}
+                  </SelectItem>
                 ))}
               </SelectContent>
             </Select>
@@ -147,10 +163,9 @@ const SearchRide = () => {
         {/* Search Button */}
         <Button
           onClick={handleSearch}
-          className="w-full h-14 bg-gradient-cta hover:opacity-90 text-primary-foreground font-heading font-semibold text-base rounded-xl shadow-cta transition-all hover:shadow-lg"
-        >
+          className="w-full h-14 bg-gradient-cta hover:opacity-90 text-primary-foreground font-heading font-semibold text-base rounded-xl shadow-cta transition-all hover:shadow-lg">
           <Search className="w-5 h-5 mr-2" />
-          Check Availability
+          Search
         </Button>
       </div>
     </section>
