@@ -9,16 +9,19 @@ const TopNav = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-sm shadow-sm border-b border-border">
       <div className="flex items-center justify-between px-4 py-3 max-w-7xl mx-auto">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <div className="bg-gradient-cta rounded-lg p-2">
-            <Bike className="w-5 h-5 text-primary-foreground" />
+        <Link to="/" className="flex items-center gap-3">
+          <div className="relative">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary via-amber-400 to-accent flex items-center justify-center shadow-lg">
+              <Bike className="w-5 h-5 text-white drop-shadow-sm" />
+            </div>
+            <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-secondary rounded-full border-2 border-white" />
           </div>
           <div className="flex flex-col">
-            <span className="font-heading font-bold text-base leading-tight text-foreground">
-              Digha Bike
+            <span className="font-heading font-extrabold text-lg leading-none tracking-tight bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
+              DIGHA
             </span>
-            <span className="font-heading font-semibold text-xs leading-tight text-secondary">
-              Rentals
+            <span className="font-heading font-semibold text-[10px] uppercase tracking-[0.2em] text-secondary">
+              Bike Rentals
             </span>
           </div>
         </Link>
