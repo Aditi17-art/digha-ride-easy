@@ -12,7 +12,7 @@ const slides = [
   {
     image: hero2,
     title: "Ride the Coastal Roads",
-    subtitle: "Affordable rentals starting from ₹40/hour",
+    subtitle: "Affordable rentals for unforgettable journeys",
   },
 ];
 
@@ -46,8 +46,7 @@ const HeroSlider = () => {
           key={index}
           className={`absolute inset-0 transition-opacity duration-700 ${
             index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
-        >
+          }`}>
           <img
             src={slide.image}
             alt={slide.title}
@@ -78,9 +77,7 @@ const HeroSlider = () => {
               key={index}
               onClick={() => goToSlide(index)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? "w-8 bg-primary"
-                  : "w-2 bg-card/50"
+                index === currentSlide ? "w-8 bg-primary" : "w-2 bg-card/50"
               }`}
             />
           ))}
@@ -90,14 +87,12 @@ const HeroSlider = () => {
       {/* Arrows */}
       <button
         onClick={goPrev}
-        className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card/20 backdrop-blur-sm flex items-center justify-center text-card hover:bg-card/30 transition-colors"
-      >
+        className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card/20 backdrop-blur-sm flex items-center justify-center text-card hover:bg-card/30 transition-colors">
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={goNext}
-        className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card/20 backdrop-blur-sm flex items-center justify-center text-card hover:bg-card/30 transition-colors"
-      >
+        className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-card/20 backdrop-blur-sm flex items-center justify-center text-card hover:bg-card/30 transition-colors">
         <ChevronRight className="w-6 h-6" />
       </button>
     </section>
