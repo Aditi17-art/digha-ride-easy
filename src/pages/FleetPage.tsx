@@ -13,8 +13,6 @@ const vehicles = [
     id: 1,
     name: "Honda Activa",
     type: "Scooty",
-    price: 300,
-    priceUnit: "day",
     image: scooty1,
     features: ["Automatic", "110cc", "Fuel Efficient"],
   },
@@ -22,8 +20,6 @@ const vehicles = [
     id: 2,
     name: "Honda Dio",
     type: "Scooty",
-    price: 350,
-    priceUnit: "day",
     image: scooty2,
     features: ["Automatic", "110cc", "Stylish Design"],
   },
@@ -31,8 +27,6 @@ const vehicles = [
     id: 3,
     name: "Yamaha FZ",
     type: "Bike",
-    price: 500,
-    priceUnit: "day",
     image: bike1,
     features: ["Manual", "150cc", "Sporty"],
   },
@@ -40,8 +34,6 @@ const vehicles = [
     id: 4,
     name: "Royal Enfield Classic",
     type: "Bike",
-    price: 800,
-    priceUnit: "day",
     image: bike2,
     features: ["Manual", "350cc", "Premium Cruiser"],
   },
@@ -84,8 +76,7 @@ const FleetPage = () => {
                 filter === tab
                   ? "bg-primary text-primary-foreground"
                   : "bg-muted text-muted-foreground hover:bg-muted/80"
-              }`}
-            >
+              }`}>
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
           ))}
@@ -98,8 +89,7 @@ const FleetPage = () => {
           {filteredVehicles.map((vehicle) => (
             <div
               key={vehicle.id}
-              className="bg-card rounded-2xl shadow-card overflow-hidden"
-            >
+              className="bg-card rounded-2xl shadow-card overflow-hidden">
               <div className="flex">
                 {/* Image */}
                 <div className="w-1/3 bg-muted">
@@ -118,30 +108,22 @@ const FleetPage = () => {
                   <h3 className="font-heading font-semibold text-foreground text-lg">
                     {vehicle.name}
                   </h3>
-                  
+
                   <div className="flex flex-wrap gap-1 mt-2">
                     {vehicle.features.map((f, i) => (
                       <span
                         key={i}
-                        className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded"
-                      >
+                        className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded">
                         {f}
                       </span>
                     ))}
                   </div>
 
                   <div className="flex items-center justify-between mt-3">
-                    <p className="text-accent font-bold text-lg">
-                      ₹{vehicle.price}
-                      <span className="text-muted-foreground font-normal text-sm">
-                        /{vehicle.priceUnit}
-                      </span>
-                    </p>
                     <Button
                       onClick={() => handleBookNow(vehicle.name)}
                       size="sm"
-                      className="bg-gradient-cta text-primary-foreground font-semibold rounded-lg"
-                    >
+                      className="bg-gradient-cta text-primary-foreground font-semibold rounded-lg">
                       Book Now
                     </Button>
                   </div>

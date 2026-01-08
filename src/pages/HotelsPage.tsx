@@ -12,7 +12,6 @@ const hotels = [
     name: "Hotel Sea Hawk",
     location: "Old Digha",
     rating: 4.5,
-    price: 1500,
     image: hotel1,
     tags: ["Beach View", "AC Rooms", "Restaurant"],
     discount: "10%",
@@ -22,7 +21,6 @@ const hotels = [
     name: "Digha Beach Resort",
     location: "New Digha",
     rating: 4.3,
-    price: 2200,
     image: hotel2,
     tags: ["Pool", "Spa", "Beach Access"],
     discount: "10%",
@@ -32,7 +30,6 @@ const hotels = [
     name: "Hotel Ocean View",
     location: "Old Digha",
     rating: 4.1,
-    price: 1200,
     image: hotel3,
     tags: ["Sea Facing", "WiFi", "Parking"],
     discount: "10%",
@@ -42,7 +39,6 @@ const hotels = [
     name: "Sunrise Beach Hotel",
     location: "New Digha",
     rating: 4.0,
-    price: 1000,
     image: hotel1,
     tags: ["Budget", "Clean Rooms", "Near Beach"],
     discount: "10%",
@@ -52,7 +48,6 @@ const hotels = [
     name: "Palm Bay Resort",
     location: "Old Digha",
     rating: 4.4,
-    price: 1800,
     image: hotel2,
     tags: ["Garden View", "Restaurant", "Parking"],
     discount: "10%",
@@ -77,7 +72,8 @@ const HotelsPage = () => {
         <div className="flex items-center justify-center gap-2 text-accent">
           <Percent className="w-5 h-5" />
           <p className="font-medium text-sm">
-            Get <span className="font-bold">10% off</span> when you book a bike with us!
+            Get <span className="font-bold">10% off</span> when you book a bike
+            with us!
           </p>
         </div>
       </div>
@@ -87,8 +83,7 @@ const HotelsPage = () => {
         {hotels.map((hotel) => (
           <div
             key={hotel.id}
-            className="bg-card rounded-2xl shadow-card overflow-hidden"
-          >
+            className="bg-card rounded-2xl shadow-card overflow-hidden">
             {/* Image */}
             <div className="relative h-44">
               <img
@@ -120,8 +115,7 @@ const HotelsPage = () => {
                 {hotel.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md"
-                  >
+                    className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md">
                     {tag}
                   </span>
                 ))}
@@ -129,15 +123,10 @@ const HotelsPage = () => {
 
               {/* Price & CTA */}
               <div className="flex items-center justify-between mt-4">
-                <div>
-                  <span className="text-secondary font-bold text-lg">₹{hotel.price}</span>
-                  <span className="text-muted-foreground text-sm">/night</span>
-                </div>
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
-                >
+                  className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground">
                   <ExternalLink className="w-4 h-4 mr-1" />
                   View Details
                 </Button>
