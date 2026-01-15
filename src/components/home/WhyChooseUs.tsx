@@ -8,18 +8,18 @@ const features = [
   },
   {
     icon: Wallet,
-    title: "Zero Deposit",
+    title: "Zero Security Deposit",
     description: "Pay only for what you use, no hidden charges",
   },
   {
     icon: HardHat,
-    title: "Free Helmet",
-    description: "Complimentary helmet provided with every rental",
+    title: "Free Helmets",
+    description: "2 Complimentary helmets provided with every rental",
   },
   {
     icon: Percent,
     title: "Hotel Discounts",
-    description: "Get 10% off on partner hotel bookings",
+    description: "Get upto 10% off on partner hotel bookings",
   },
 ];
 
@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
       {/* Premium sunset gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100 via-amber-50 to-rose-100" />
       <div className="absolute inset-0 bg-gradient-to-t from-white/40 to-transparent" />
-      
+
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-orange-200/60 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-amber-200/50 to-transparent rounded-full blur-3xl" />
@@ -43,7 +43,8 @@ const WhyChooseUs = () => {
             The Smart Choice for Your Ride
           </h2>
           <p className="text-muted-foreground text-sm mt-3 max-w-sm mx-auto leading-relaxed">
-            Experience hassle-free two-wheeler rentals with unbeatable perks in Digha
+            Experience hassle-free two-wheeler rentals with unbeatable perks in
+            Digha
           </p>
         </div>
 
@@ -53,8 +54,7 @@ const WhyChooseUs = () => {
             return (
               <div
                 key={index}
-                className="group bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-white/50"
-              >
+                className="group bg-white/90 backdrop-blur-sm rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-white/50">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Icon className="w-7 h-7 text-primary" />
                 </div>

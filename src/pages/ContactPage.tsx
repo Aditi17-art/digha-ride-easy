@@ -4,8 +4,11 @@ import Footer from "@/components/layout/Footer";
 
 const ContactPage = () => {
   const phoneNumber = "+918167751151";
-  const whatsappLink = `https://wa.me/${phoneNumber.replace("+", "")}?text=Hi! I'm interested in renting a bike/scooty in Digha.`;
-  const emailAddress = "info@dighabikerentals.com";
+  const whatsappLink = `https://wa.me/${phoneNumber.replace(
+    "+",
+    ""
+  )}?text=Hi! I'm interested in renting a bike/scooty in Digha.`;
+  const emailAddress = "support@dighabikerentals.com";
 
   return (
     <main className="min-h-screen bg-background">
@@ -48,7 +51,9 @@ const ContactPage = () => {
             </div>
             <div>
               <p className="font-medium text-foreground">Phone</p>
-              <a href={`tel:${phoneNumber}`} className="text-secondary hover:underline">
+              <a
+                href={`tel:${phoneNumber}`}
+                className="text-secondary hover:underline">
                 +91-8167751151
               </a>
             </div>
@@ -60,7 +65,9 @@ const ContactPage = () => {
             </div>
             <div>
               <p className="font-medium text-foreground">Email</p>
-              <a href={`mailto:${emailAddress}`} className="text-secondary hover:underline">
+              <a
+                href={`mailto:${emailAddress}`}
+                className="text-secondary hover:underline">
                 {emailAddress}
               </a>
             </div>
@@ -114,7 +121,9 @@ const ContactPage = () => {
           </h2>
           <div className="space-y-4 text-sm">
             <div>
-              <p className="font-medium text-foreground">Do I need a license?</p>
+              <p className="font-medium text-foreground">
+                Do I need a license?
+              </p>
               <p className="text-muted-foreground mt-1">
                 Yes, a valid driving license is required for all rentals.
               </p>
@@ -126,7 +135,9 @@ const ContactPage = () => {
               </p>
             </div>
             <div>
-              <p className="font-medium text-foreground">What's the minimum rental period?</p>
+              <p className="font-medium text-foreground">
+                What's the minimum rental period?
+              </p>
               <p className="text-muted-foreground mt-1">
                 Minimum booking is 24 hours (1 day).
               </p>

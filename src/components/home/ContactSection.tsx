@@ -3,7 +3,10 @@ import { Button } from "@/components/ui/button";
 
 const ContactSection = () => {
   const phoneNumber = "+918167751151";
-  const whatsappLink = `https://wa.me/${phoneNumber.replace("+", "")}?text=Hi! I'm interested in renting a bike/scooty in Digha.`;
+  const whatsappLink = `https://wa.me/${phoneNumber.replace(
+    "+",
+    ""
+  )}?text=Hi! I'm interested in renting a bike/scooty in Digha.`;
 
   return (
     <section className="py-10 px-4 bg-background">
@@ -36,8 +39,8 @@ const ContactSection = () => {
             <p className="text-muted-foreground text-sm">
               Digha, West Bengal, India
             </p>
-            <p className="text-muted-foreground text-sm">
-              Open 7:00 AM – 10:00 PM (All Days)
+            <p className="text-muted-foreground text-sm font-bold">
+              Call us:+91 8167751151
             </p>
           </div>
         </div>
@@ -50,7 +53,11 @@ const ContactSection = () => {
               Call Us
             </Button>
           </a>
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex-1">
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1">
             <Button className="w-full h-14 bg-success text-success-foreground font-semibold rounded-xl hover:opacity-90">
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp

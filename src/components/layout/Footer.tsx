@@ -1,4 +1,13 @@
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Facebook,
+  Instagram,
+  Twitter,
+  Youtube,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -10,7 +19,7 @@ const Footer = () => {
             Digha Bike Rentals
           </h3>
           <p className="text-background/70 text-sm">
-            Trusted Bike & Scooty Rental Service in Digha
+            Best Bike & Scooty Rental Service in Digha
           </p>
         </div>
 
@@ -24,21 +33,19 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-3">
             <Phone className="w-5 h-5 text-primary shrink-0" />
-            <a href="tel:+918167751151" className="text-sm text-background/80 hover:text-primary transition-colors">
+            <a
+              href="tel:+918167751151"
+              className="text-sm text-background/80 hover:text-primary transition-colors">
               +91-8167751151
             </a>
           </div>
           <div className="flex items-center gap-3">
             <Mail className="w-5 h-5 text-primary shrink-0" />
-            <a href="mailto:info@dighabikerentals.com" className="text-sm text-background/80 hover:text-primary transition-colors">
-              info@dighabikerentals.com
+            <a
+              href="mailto:support@dighabikerentals.com"
+              className="text-sm text-background/80 hover:text-primary transition-colors">
+              support@dighabikerentals.com
             </a>
-          </div>
-          <div className="flex items-center gap-3">
-            <Clock className="w-5 h-5 text-primary shrink-0" />
-            <span className="text-sm text-background/80">
-              7:00 AM – 10:00 PM (All Days)
-            </span>
           </div>
         </div>
 
@@ -48,8 +55,7 @@ const Footer = () => {
             <a
               key={i}
               href="#"
-              className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-            >
+              className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
               <Icon className="w-5 h-5" />
             </a>
           ))}
