@@ -43,11 +43,15 @@ const BookingForm = ({ isOpen, onClose, vehicleName }: BookingFormProps) => {
   const [step, setStep] = useState<Step>("form");
   const [isLoading, setIsLoading] = useState(false);
   
-  // Form state
+  // Form state - default pickup to today, dropoff to tomorrow
   const [name, setName] = useState("");
-  const [pickupDate, setPickupDate] = useState<Date>();
+  const [pickupDate, setPickupDate] = useState<Date>(new Date());
+  const [dropoffDate, setDropoffDate] = useState<Date>(() => {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    return tomorrow;
+  });
   const [pickupTime, setPickupTime] = useState("");
-  const [dropoffDate, setDropoffDate] = useState<Date>();
   const [dropoffTime, setDropoffTime] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
   const [vehicleType, setVehicleType] = useState("");

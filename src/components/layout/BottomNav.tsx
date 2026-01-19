@@ -1,11 +1,11 @@
-import { Bike, CalendarCheck, Building2, Phone } from "lucide-react";
+import { Bike, CalendarCheck, Home, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { icon: Bike, label: "Our Fleet", path: "/fleet" },
   { icon: CalendarCheck, label: "Book Now", path: "/book", primary: true },
-  { icon: Building2, label: "Partner Hotels", path: "/hotels" },
+  { icon: Home, label: "Home", path: "/" },
   { icon: null, label: "Explore Digha", path: "/explore" },
   { icon: Phone, label: "Contact", path: "/contact" },
 ];
