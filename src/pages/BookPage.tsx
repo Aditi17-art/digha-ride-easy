@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import BookingForm from "@/components/booking/BookingForm";
 import Footer from "@/components/layout/Footer";
 
@@ -8,6 +9,13 @@ import bike1 from "@/assets/bike-1.jpg";
 import bike2 from "@/assets/bike-2.jpg";
 import { Button } from "@/components/ui/button";
 
+interface LocationState {
+  pickupDate?: Date;
+  pickupTime?: string;
+  dropoffDate?: Date;
+  dropoffTime?: string;
+}
+
 const vehicles = [
   { id: 1, name: "Honda Activa", type: "Scooty", price: 300, image: scooty1 },
   { id: 2, name: "Honda Dio", type: "Scooty", price: 350, image: scooty2 },
@@ -16,6 +24,9 @@ const vehicles = [
 ];
 
 const BookPage = () => {
+  const location = useLocation();
+  const state = location.state as LocationState | null;
+  
   const [isBookingOpen, setIsBookingOpen] = useState(true);
   const [selectedVehicle, setSelectedVehicle] = useState<string>();
 
@@ -77,6 +88,10 @@ const BookPage = () => {
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
         vehicleName={selectedVehicle}
+        initialPickupDate={state?.pickupDate ? new Date(state.pickupDate) : undefined}
+        initialPickupTime={state?.pickupTime}
+        initialDropoffDate={state?.dropoffDate ? new Date(state.dropoffDate) : undefined}
+        initialDropoffTime={state?.dropoffTime}
       />
     </main>
   );
