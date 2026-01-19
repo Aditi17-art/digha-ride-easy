@@ -46,7 +46,7 @@ const SearchRide = () => {
   const [dropoffTime, setDropoffTime] = useState<string>();
 
   const handleSearch = () => {
-    navigate("/fleet", {
+    navigate("/book", {
       state: { pickupDate, pickupTime, dropoffDate, dropoffTime },
     });
   };

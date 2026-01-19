@@ -29,6 +29,10 @@ interface BookingFormProps {
   isOpen: boolean;
   onClose: () => void;
   vehicleName?: string;
+  initialPickupDate?: Date;
+  initialPickupTime?: string;
+  initialDropoffDate?: Date;
+  initialDropoffTime?: string;
 }
 
 const timeSlots = [
@@ -39,20 +43,30 @@ const timeSlots = [
 
 type Step = "form" | "otp" | "success";
 
-const BookingForm = ({ isOpen, onClose, vehicleName }: BookingFormProps) => {
+const BookingForm = ({ 
+  isOpen, 
+  onClose, 
+  vehicleName,
+  initialPickupDate,
+  initialPickupTime,
+  initialDropoffDate,
+  initialDropoffTime
+}: BookingFormProps) => {
   const [step, setStep] = useState<Step>("form");
   const [isLoading, setIsLoading] = useState(false);
   
-  // Form state - default pickup to today, dropoff to tomorrow
-  const [name, setName] = useState("");
-  const [pickupDate, setPickupDate] = useState<Date>(new Date());
-  const [dropoffDate, setDropoffDate] = useState<Date>(() => {
+  // Form state - use initial values from props, or default to today/tomorrow
+  const getDefaultDropoffDate = () => {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     return tomorrow;
-  });
-  const [pickupTime, setPickupTime] = useState("");
-  const [dropoffTime, setDropoffTime] = useState("");
+  };
+  
+  const [name, setName] = useState("");
+  const [pickupDate, setPickupDate] = useState<Date>(initialPickupDate || new Date());
+  const [dropoffDate, setDropoffDate] = useState<Date>(initialDropoffDate || getDefaultDropoffDate());
+  const [pickupTime, setPickupTime] = useState(initialPickupTime || "");
+  const [dropoffTime, setDropoffTime] = useState(initialDropoffTime || "");
   const [whatsapp, setWhatsapp] = useState("");
   const [vehicleType, setVehicleType] = useState("");
   const [hasLicense, setHasLicense] = useState("");
