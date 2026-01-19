@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { format } from "date-fns";
-import { CalendarIcon, Clock, X, CheckCircle2, Loader2 } from "lucide-react";
+import { CalendarIcon, CheckCircle2, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -65,8 +65,8 @@ const BookingForm = ({
   const [name, setName] = useState("");
   const [pickupDate, setPickupDate] = useState<Date>(initialPickupDate || new Date());
   const [dropoffDate, setDropoffDate] = useState<Date>(initialDropoffDate || getDefaultDropoffDate());
-  const [pickupTime, setPickupTime] = useState(initialPickupTime || "");
-  const [dropoffTime, setDropoffTime] = useState(initialDropoffTime || "");
+  const [pickupTime, setPickupTime] = useState(initialPickupTime || "10:00 AM");
+  const [dropoffTime, setDropoffTime] = useState(initialDropoffTime || "10:00 AM");
   const [whatsapp, setWhatsapp] = useState("");
   const [vehicleType, setVehicleType] = useState("");
   const [hasLicense, setHasLicense] = useState("");
@@ -120,12 +120,6 @@ const BookingForm = ({
             {step === "otp" && "Verify WhatsApp"}
             {step === "success" && "Booking Submitted!"}
           </DialogTitle>
-          <button
-            onClick={handleClose}
-            className="absolute right-4 top-4 text-muted-foreground hover:text-foreground"
-          >
-            <X className="w-5 h-5" />
-          </button>
         </DialogHeader>
 
         {step === "form" && (
@@ -187,7 +181,7 @@ const BookingForm = ({
               </div>
               <div>
                 <Label>Pickup Time *</Label>
-                <Select onValueChange={setPickupTime} required>
+                <Select value={pickupTime} onValueChange={setPickupTime}>
                   <SelectTrigger className="mt-1">
                     <SelectValue placeholder="Select" />
                   </SelectTrigger>
@@ -231,7 +225,7 @@ const BookingForm = ({
               </div>
               <div>
                 <Label>Dropoff Time *</Label>
-                <Select onValueChange={setDropoffTime} required>
+                <Select value={dropoffTime} onValueChange={setDropoffTime}>
                   <SelectTrigger className="mt-1">
                     <SelectValue placeholder="Select" />
                   </SelectTrigger>
