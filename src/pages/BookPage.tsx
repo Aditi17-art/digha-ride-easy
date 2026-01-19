@@ -88,10 +88,10 @@ const BookPage = () => {
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
         vehicleName={selectedVehicle}
-        initialPickupDate={state?.pickupDate ? new Date(state.pickupDate) : undefined}
-        initialPickupTime={state?.pickupTime}
-        initialDropoffDate={state?.dropoffDate ? new Date(state.dropoffDate) : undefined}
-        initialDropoffTime={state?.dropoffTime}
+        initialPickupDate={state?.pickupDate ? new Date(state.pickupDate) : new Date()}
+        initialPickupTime={state?.pickupTime || "10:00 AM"}
+        initialDropoffDate={state?.dropoffDate ? new Date(state.dropoffDate) : new Date(new Date().setDate(new Date().getDate() + 1))}
+        initialDropoffTime={state?.dropoffTime || "10:00 AM"}
       />
     </main>
   );
