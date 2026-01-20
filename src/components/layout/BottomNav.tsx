@@ -44,14 +44,14 @@ const BottomNav = () => {
               key={item.path}
               to={item.path}
               className={cn(
-                "flex flex-col items-center gap-1 py-2 px-3 rounded-lg transition-colors",
+                "flex flex-col items-center justify-center gap-1 py-2 px-2 rounded-lg transition-colors min-w-[60px]",
                 isActive
                   ? "text-secondary"
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
-              {Icon && <Icon className="w-5 h-5" />}
-              <span className="text-xs font-medium">{item.label}</span>
+              {Icon ? <Icon className="w-5 h-5" /> : <div className="w-5 h-5" />}
+              <span className="text-[10px] font-medium text-center leading-tight whitespace-nowrap">{item.label}</span>
             </Link>
           );
         })}
