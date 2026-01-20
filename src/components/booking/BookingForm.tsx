@@ -113,7 +113,7 @@ const BookingForm = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="max-w-md mx-4 max-h-[90vh] overflow-y-auto">
+      <DialogContent className="w-[calc(100%-2rem)] max-w-md mx-auto max-h-[85vh] overflow-y-auto rounded-2xl left-1/2 -translate-x-1/2 sm:left-1/2 sm:-translate-x-1/2">
         <DialogHeader>
           <DialogTitle className="font-heading font-bold text-xl text-center">
             {step === "form" && "Book Your Ride"}
