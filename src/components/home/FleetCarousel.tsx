@@ -3,9 +3,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-import scooty1 from "@/assets/scooty-1.jpg";
-import scooty2 from "@/assets/scooty-2.jpg";
-import bike1 from "@/assets/bike-1.jpg";
+import scooty1 from "@/assets/scooty-1.jpeg";
+import scooty2 from "@/assets/scooty-2.jpeg";
+import bike1 from "@/assets/bike-1.jpeg";
 import bike2 from "@/assets/bike-2.jpg";
 
 const vehicles = [
