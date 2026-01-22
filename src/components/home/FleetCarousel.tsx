@@ -5,25 +5,27 @@ import { Button } from "@/components/ui/button";
 
 import scooty1 from "@/assets/scooty-1.jpeg";
 import scooty2 from "@/assets/scooty-2.jpeg";
+import scooty3 from "@/assets/scooty-3.jpeg";
+
 import bike1 from "@/assets/bike-1.jpeg";
-import bike2 from "@/assets/bike-2.jpg";
+import bike2 from "@/assets/bike-2.jpeg";
 
 const vehicles = [
   {
     id: 1,
-    name: "Honda Activa",
+    name: "Hero Vida VX2 Electric Scooty",
     type: "Scooty",
     image: scooty1,
   },
   {
     id: 2,
-    name: "Honda Dio",
+    name: "TVS Jupiter 125",
     type: "Scooty",
     image: scooty2,
   },
   {
     id: 3,
-    name: "Yamaha FZ",
+    name: "TVS Apache RTR 160 4V",
     type: "Bike",
     image: bike1,
   },
@@ -32,6 +34,12 @@ const vehicles = [
     name: "Royal Enfield Classic",
     type: "Bike",
     image: bike2,
+  },
+  {
+    id: 5,
+    name: "TVS Jupiter 125",
+    type: "Scooty",
+    image: scooty3,
   },
 ];
 

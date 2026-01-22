@@ -3,32 +3,42 @@ import { Button } from "@/components/ui/button";
 import BookingForm from "@/components/booking/BookingForm";
 import Footer from "@/components/layout/Footer";
 
-import scooty1 from "@/assets/scooty-1.jpg";
-import scooty2 from "@/assets/scooty-2.jpg";
-import bike1 from "@/assets/bike-1.jpg";
-import bike2 from "@/assets/bike-2.jpg";
+import scooty1 from "@/assets/scooty-1.jpeg";
+import scooty2 from "@/assets/scooty-2.jpeg";
+import scooty3 from "@/assets/scooty-3.jpeg";
+
+import bike1 from "@/assets/bike-1.jpeg";
+import bike2 from "@/assets/bike-2.jpeg";
 
 const vehicles = [
   {
     id: 1,
-    name: "Honda Activa",
+    name: "Hero Vida VX2 Electric Scooty",
     type: "Scooty",
     image: scooty1,
-    features: ["Automatic", "110cc", "Fuel Efficient"],
+    features: ["Automatic", "Electric"],
   },
   {
     id: 2,
-    name: "Honda Dio",
+    name: "TVS Jupiter 125",
     type: "Scooty",
     image: scooty2,
-    features: ["Automatic", "110cc", "Stylish Design"],
+    features: ["Manual", "125cc", "Stylish Design"],
   },
   {
     id: 3,
-    name: "Yamaha FZ",
+    name: "TVS Jupiter 125",
+    type: "Scooty",
+    image: scooty3,
+    features: ["Manual", "125cc", "Stylish Design"],
+  },
+
+  {
+    id: 3,
+    name: "TVS Apache RTR 160 4V",
     type: "Bike",
     image: bike1,
-    features: ["Manual", "150cc", "Sporty"],
+    features: ["Manual", "160cc", "Sporty"],
   },
   {
     id: 4,
@@ -45,7 +55,7 @@ const FleetPage = () => {
   const [selectedVehicle, setSelectedVehicle] = useState<string>();
 
   const filteredVehicles = vehicles.filter(
-    (v) => filter === "all" || v.type.toLowerCase() === filter
+    (v) => filter === "all" || v.type.toLowerCase() === filter,
   );
 
   const handleBookNow = (vehicleName: string) => {

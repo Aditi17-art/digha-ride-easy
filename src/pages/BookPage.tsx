@@ -3,10 +3,12 @@ import { useLocation } from "react-router-dom";
 import BookingForm from "@/components/booking/BookingForm";
 import Footer from "@/components/layout/Footer";
 
-import scooty1 from "@/assets/scooty-1.jpg";
-import scooty2 from "@/assets/scooty-2.jpg";
-import bike1 from "@/assets/bike-1.jpg";
-import bike2 from "@/assets/bike-2.jpg";
+import scooty1 from "@/assets/scooty-1.jpeg";
+import scooty2 from "@/assets/scooty-2.jpeg";
+import scooty3 from "@/assets/scooty-3.jpeg";
+
+import bike1 from "@/assets/bike-1.jpeg";
+import bike2 from "@/assets/bike-2.jpeg";
 import { Button } from "@/components/ui/button";
 
 interface LocationState {
@@ -17,16 +19,28 @@ interface LocationState {
 }
 
 const vehicles = [
-  { id: 1, name: "Honda Activa", type: "Scooty", price: 300, image: scooty1 },
-  { id: 2, name: "Honda Dio", type: "Scooty", price: 350, image: scooty2 },
-  { id: 3, name: "Yamaha FZ", type: "Bike", price: 500, image: bike1 },
-  { id: 4, name: "Royal Enfield Classic", type: "Bike", price: 800, image: bike2 },
+  {
+    id: 1,
+    name: "Hero Vida VX2 Electric Scooty",
+    type: "Scooty",
+    image: scooty1,
+  },
+  { id: 2, name: "TVS Jupiter 125", type: "Scooty", image: scooty2 },
+  { id: 3, name: "TVS Jupiter 125", type: "Scooty", image: scooty3 },
+
+  { id: 3, name: "TVS Apache RTR 160 4V", type: "Bike", image: bike1 },
+  {
+    id: 4,
+    name: "Royal Enfield Classic",
+    type: "Bike",
+    image: bike2,
+  },
 ];
 
 const BookPage = () => {
   const location = useLocation();
   const state = location.state as LocationState | null;
-  
+
   const [isBookingOpen, setIsBookingOpen] = useState(true);
   const [selectedVehicle, setSelectedVehicle] = useState<string>();
 
@@ -61,23 +75,22 @@ const BookPage = () => {
                 selectedVehicle === vehicle.name
                   ? "border-primary bg-primary/5"
                   : "border-border bg-card hover:border-primary/50"
-              }`}
-            >
+              }`}>
               <img
                 src={vehicle.image}
                 alt={vehicle.name}
                 className="w-full h-20 object-contain mb-2"
               />
-              <p className="font-medium text-sm text-foreground">{vehicle.name}</p>
-              <p className="text-accent font-bold text-sm">₹{vehicle.price}/day</p>
+              <p className="font-medium text-sm text-foreground">
+                {vehicle.name}
+              </p>
             </button>
           ))}
         </div>
 
         <Button
           onClick={() => setIsBookingOpen(true)}
-          className="w-full mt-6 h-14 bg-gradient-cta text-primary-foreground font-heading font-semibold text-base rounded-xl shadow-cta"
-        >
+          className="w-full mt-6 h-14 bg-gradient-cta text-primary-foreground font-heading font-semibold text-base rounded-xl shadow-cta">
           Open Booking Form
         </Button>
       </div>
@@ -88,9 +101,15 @@ const BookPage = () => {
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
         vehicleName={selectedVehicle}
-        initialPickupDate={state?.pickupDate ? new Date(state.pickupDate) : new Date()}
+        initialPickupDate={
+          state?.pickupDate ? new Date(state.pickupDate) : new Date()
+        }
         initialPickupTime={state?.pickupTime || "10:00 AM"}
-        initialDropoffDate={state?.dropoffDate ? new Date(state.dropoffDate) : new Date(new Date().setDate(new Date().getDate() + 1))}
+        initialDropoffDate={
+          state?.dropoffDate
+            ? new Date(state.dropoffDate)
+            : new Date(new Date().setDate(new Date().getDate() + 1))
+        }
         initialDropoffTime={state?.dropoffTime || "10:00 AM"}
       />
     </main>
