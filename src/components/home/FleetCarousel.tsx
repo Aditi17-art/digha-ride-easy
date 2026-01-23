@@ -6,14 +6,22 @@ import { Button } from "@/components/ui/button";
 import scooty1 from "@/assets/scooty-1.jpeg";
 import scooty2 from "@/assets/scooty-2.jpeg";
 import scooty3 from "@/assets/scooty-3.jpeg";
+import scooty4 from "@/assets/scooty-4.jpeg";
+import scooty5 from "@/assets/scooty-5.jpeg";
+import scooty6 from "@/assets/scooty-6.jpeg";
+import scooty7 from "@/assets/scooty-7.jpeg";
 
 import bike1 from "@/assets/bike-1.jpeg";
 import bike2 from "@/assets/bike-2.jpeg";
+import bike3 from "@/assets/bike-3.jpeg";
+import bike4 from "@/assets/bike-4.jpeg";
+import bike6 from "@/assets/bike-6.jpeg";
+import bike7 from "@/assets/bike-7.jpeg";
 
 const vehicles = [
   {
     id: 1,
-    name: "Hero Vida VX2 Electric Scooty",
+    name: "Hero Vida VX2 Electric ",
     type: "Scooty",
     image: scooty1,
   },
@@ -25,21 +33,70 @@ const vehicles = [
   },
   {
     id: 3,
+    name: "Honda Activa 6G 125",
+    type: "Scooty",
+    image: scooty3,
+  },
+  {
+    id: 4,
+    name: "Hero XOOM 125",
+    type: "Scooty",
+    image: scooty4,
+  },
+  {
+    id: 5,
+    name: "Yamaha Fascino 125",
+    type: "Scooty",
+    image: scooty5,
+  },
+  {
+    id: 6,
+    name: "Yamaha Ray-ZR",
+    type: "Scooty",
+    image: scooty6,
+  },
+  {
+    id: 7,
+    name: "TVS Ntorq 125",
+    type: "Scooty",
+    image: scooty7,
+  },
+
+  {
+    id: 8,
     name: "TVS Apache RTR 160 4V",
     type: "Bike",
     image: bike1,
   },
   {
-    id: 4,
-    name: "Royal Enfield Classic",
+    id: 9,
+    name: "Hero XTreme 125",
     type: "Bike",
     image: bike2,
   },
   {
-    id: 5,
-    name: "TVS Jupiter 125",
-    type: "Scooty",
-    image: scooty3,
+    id: 10,
+    name: "Bajaj Pulsar N160",
+    type: "Bike",
+    image: bike3,
+  },
+  {
+    id: 11,
+    name: "Honda SP 125",
+    type: "Bike",
+    image: bike4,
+  },
+  {
+    id: 13,
+    name: "Hero Glamour 125",
+    type: "Bike",
+    image: bike6,
+  },
+  {
+    id: 14,
+    name: "Bajaj Pulsar N125",
+    type: "Bike",
+    image: bike7,
   },
 ];
 
