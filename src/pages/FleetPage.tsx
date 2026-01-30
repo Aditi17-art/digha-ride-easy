@@ -131,8 +131,7 @@ const FleetPage = () => {
   };
 
   return (
-    <div className="dark">
-      <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background">
         {/* Header */}
         <div className="bg-card border-b border-border px-4 py-8">
           <h1 className="font-heading font-bold text-3xl text-foreground text-center">
@@ -185,8 +184,7 @@ const FleetPage = () => {
           onClose={() => setIsBookingOpen(false)}
           vehicleName={selectedVehicle}
         />
-      </main>
-    </div>
+    </main>
   );
 };
 
