@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-10 px-4 mb-20">
+    <footer className="bg-foreground text-background py-10 px-4 mb-0">
       <div className="max-w-lg mx-auto">
         {/* Brand */}
         <div className="text-center mb-8">
