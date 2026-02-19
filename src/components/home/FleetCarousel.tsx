@@ -19,7 +19,7 @@ import bike6 from "@/assets/bike-6.jpeg";
 import bike7 from "@/assets/bike-7.jpeg";
 
 const vehicles = [
-  {
+  /*{
     id: 1,
     name: "Hero Vida VX2 Electric ",
     type: "Scooty",
@@ -30,7 +30,7 @@ const vehicles = [
     name: "TVS Jupiter 125",
     type: "Scooty",
     image: scooty2,
-  },
+  },*/
   {
     id: 3,
     name: "Honda Activa 6G 125",
@@ -55,19 +55,18 @@ const vehicles = [
     type: "Scooty",
     image: scooty6,
   },
-  {
+  /* {
     id: 7,
     name: "TVS Ntorq 125",
     type: "Scooty",
     image: scooty7,
   },
-
   {
     id: 8,
     name: "TVS Apache RTR 160 4V",
     type: "Bike",
     image: bike1,
-  },
+  },*/
   {
     id: 9,
     name: "Hero XTreme 125",
@@ -86,7 +85,7 @@ const vehicles = [
     type: "Bike",
     image: bike4,
   },
-  {
+  /* {
     id: 13,
     name: "Hero Glamour 125",
     type: "Bike",
@@ -97,7 +96,7 @@ const vehicles = [
     name: "Bajaj Pulsar N125",
     type: "Bike",
     image: bike7,
-  },
+  },*/
 ];
 
 const FleetCarousel = () => {

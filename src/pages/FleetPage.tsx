@@ -19,7 +19,7 @@ import bike6 from "@/assets/bike-6.jpeg";
 import bike7 from "@/assets/bike-7.jpeg";
 
 const vehicles = [
-  {
+  /* {
     id: 1,
     name: "Hero Vida VX2 Electric",
     type: "Scooty",
@@ -32,7 +32,7 @@ const vehicles = [
     type: "Scooty",
     image: scooty2,
     distance: "180 km included",
-  },
+  },*/
   {
     id: 3,
     name: "Honda Activa 6G 125",
@@ -61,7 +61,7 @@ const vehicles = [
     image: scooty6,
     distance: "175 km included",
   },
-  {
+  /*{
     id: 7,
     name: "TVS Ntorq 125",
     type: "Scooty",
@@ -74,7 +74,7 @@ const vehicles = [
     type: "Bike",
     image: bike1,
     distance: "220 km included",
-  },
+  },*/
   {
     id: 9,
     name: "Hero XTreme 125",
@@ -96,7 +96,7 @@ const vehicles = [
     image: bike4,
     distance: "195 km included",
   },
-  {
+  /* {
     id: 13,
     name: "Hero Glamour 125",
     type: "Bike",
@@ -109,7 +109,7 @@ const vehicles = [
     type: "Bike",
     image: bike7,
     distance: "185 km included",
-  },
+  },*/
 ];
 
 const FleetPage = () => {
@@ -132,58 +132,58 @@ const FleetPage = () => {
 
   return (
     <main className="min-h-screen bg-background">
-        {/* Header */}
-        <div className="bg-card border-b border-border px-4 py-8">
-          <h1 className="font-heading font-bold text-3xl text-foreground text-center">
-            Our Fleet
-          </h1>
-          <p className="text-muted-foreground text-center mt-2">
-            Choose from our well-maintained vehicles
-          </p>
+      {/* Header */}
+      <div className="bg-card border-b border-border px-4 py-8">
+        <h1 className="font-heading font-bold text-3xl text-foreground text-center">
+          Our Fleet
+        </h1>
+        <p className="text-muted-foreground text-center mt-2">
+          Choose from our well-maintained vehicles
+        </p>
+      </div>
+
+      {/* Filter Tabs */}
+      <div className="sticky top-0 z-20 bg-card border-b border-border px-4 py-3">
+        <div className="flex gap-2 max-w-2xl mx-auto">
+          {(["all", "scooty", "bike"] as const).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setFilter(tab)}
+              className={`flex-1 py-2.5 px-4 rounded-xl font-medium text-sm transition-all ${
+                filter === tab
+                  ? "bg-primary text-primary-foreground shadow-cta"
+                  : "bg-muted text-muted-foreground hover:bg-muted/80"
+              }`}>
+              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+            </button>
+          ))}
         </div>
+      </div>
 
-        {/* Filter Tabs */}
-        <div className="sticky top-0 z-20 bg-card border-b border-border px-4 py-3">
-          <div className="flex gap-2 max-w-2xl mx-auto">
-            {(["all", "scooty", "bike"] as const).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setFilter(tab)}
-                className={`flex-1 py-2.5 px-4 rounded-xl font-medium text-sm transition-all ${
-                  filter === tab
-                    ? "bg-primary text-primary-foreground shadow-cta"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
-                }`}>
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </button>
-            ))}
-          </div>
+      {/* Vehicle Grid */}
+      <div className="px-4 py-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filteredVehicles.map((vehicle) => (
+            <VehicleCard
+              key={vehicle.id}
+              name={vehicle.name}
+              type={vehicle.type}
+              image={vehicle.image}
+              distance={vehicle.distance}
+              onBookNow={() => handleBookNow(vehicle.name)}
+              onContact={handleContact}
+            />
+          ))}
         </div>
+      </div>
 
-        {/* Vehicle Grid */}
-        <div className="px-4 py-6 max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredVehicles.map((vehicle) => (
-              <VehicleCard
-                key={vehicle.id}
-                name={vehicle.name}
-                type={vehicle.type}
-                image={vehicle.image}
-                distance={vehicle.distance}
-                onBookNow={() => handleBookNow(vehicle.name)}
-                onContact={handleContact}
-              />
-            ))}
-          </div>
-        </div>
+      <Footer />
 
-        <Footer />
-
-        <BookingForm
-          isOpen={isBookingOpen}
-          onClose={() => setIsBookingOpen(false)}
-          vehicleName={selectedVehicle}
-        />
+      <BookingForm
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+        vehicleName={selectedVehicle}
+      />
     </main>
   );
 };

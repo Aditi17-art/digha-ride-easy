@@ -5,7 +5,7 @@ const ContactSection = () => {
   const phoneNumber = "+918167751151";
   const whatsappLink = `https://wa.me/${phoneNumber.replace(
     "+",
-    ""
+    "",
   )}?text=Hi! I'm interested in renting a bike/scooty in Digha.`;
 
   return (
@@ -39,8 +39,8 @@ const ContactSection = () => {
             <p className="text-muted-foreground text-sm">
               Digha, West Bengal, India
             </p>
-            <p className="text-muted-foreground text-sm font-bold">
-              Call us:+91 8167751151
+            <p className="font-heading font-bold text-foreground">
+              Call Us:+91 8167751151
             </p>
           </div>
         </div>

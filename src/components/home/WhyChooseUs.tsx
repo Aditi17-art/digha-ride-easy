@@ -42,10 +42,6 @@ const WhyChooseUs = () => {
           <h2 className="font-heading font-bold text-2xl md:text-3xl text-foreground">
             The Smart Choice for Your Ride
           </h2>
-          <p className="text-muted-foreground text-sm mt-3 max-w-sm mx-auto leading-relaxed">
-            Experience hassle-free two-wheeler rentals with unbeatable perks in
-            Digha
-          </p>
         </div>
 
         <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto">

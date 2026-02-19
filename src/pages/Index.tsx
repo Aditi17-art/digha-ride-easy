@@ -14,10 +14,10 @@ const Index = () => {
       <HeroSlider />
       <SearchRide />
       <FleetCarousel />
+      <ContactSection />
       <WhyChooseUs />
       <PartnerHotels />
       <HowItWorks />
-      <ContactSection />
       <ExploreDighaPreview />
       <Footer />
     </main>

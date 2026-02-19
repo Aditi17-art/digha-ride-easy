@@ -36,37 +36,57 @@ interface BookingFormProps {
 }
 
 const timeSlots = [
-  "06:00 AM", "07:00 AM", "08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM",
-  "12:00 PM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM",
-  "06:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"
+  "06:00 AM",
+  "07:00 AM",
+  "08:00 AM",
+  "09:00 AM",
+  "10:00 AM",
+  "11:00 AM",
+  "12:00 PM",
+  "01:00 PM",
+  "02:00 PM",
+  "03:00 PM",
+  "04:00 PM",
+  "05:00 PM",
+  "06:00 PM",
+  "07:00 PM",
+  "08:00 PM",
+  "09:00 PM",
+  "10:00 PM",
 ];
 
 type Step = "form" | "otp" | "success";
 
-const BookingForm = ({ 
-  isOpen, 
-  onClose, 
+const BookingForm = ({
+  isOpen,
+  onClose,
   vehicleName,
   initialPickupDate,
   initialPickupTime,
   initialDropoffDate,
-  initialDropoffTime
+  initialDropoffTime,
 }: BookingFormProps) => {
   const [step, setStep] = useState<Step>("form");
   const [isLoading, setIsLoading] = useState(false);
-  
+
   // Form state - use initial values from props, or default to today/tomorrow
   const getDefaultDropoffDate = () => {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     return tomorrow;
   };
-  
+
   const [name, setName] = useState("");
-  const [pickupDate, setPickupDate] = useState<Date>(initialPickupDate || new Date());
-  const [dropoffDate, setDropoffDate] = useState<Date>(initialDropoffDate || getDefaultDropoffDate());
+  const [pickupDate, setPickupDate] = useState<Date>(
+    initialPickupDate || new Date(),
+  );
+  const [dropoffDate, setDropoffDate] = useState<Date>(
+    initialDropoffDate || getDefaultDropoffDate(),
+  );
   const [pickupTime, setPickupTime] = useState(initialPickupTime || "10:00 AM");
-  const [dropoffTime, setDropoffTime] = useState(initialDropoffTime || "10:00 AM");
+  const [dropoffTime, setDropoffTime] = useState(
+    initialDropoffTime || "10:00 AM",
+  );
   const [whatsapp, setWhatsapp] = useState("");
   const [vehicleType, setVehicleType] = useState("");
   const [hasLicense, setHasLicense] = useState("");
@@ -75,7 +95,7 @@ const BookingForm = ({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     // Simulate OTP sending
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsLoading(false);
@@ -84,7 +104,7 @@ const BookingForm = ({
 
   const handleVerifyOtp = async () => {
     setIsLoading(true);
-    
+
     // Simulate OTP verification
     await new Promise((resolve) => setTimeout(resolve, 1500));
     setIsLoading(false);
@@ -92,7 +112,7 @@ const BookingForm = ({
 
     // Open WhatsApp with confirmation message
     const message = encodeURIComponent(
-      `Hi! I just submitted a booking request for ${vehicleType || "a vehicle"} from Digha Bike Rentals. Looking forward to your confirmation call!`
+      `Hi! I just submitted a booking request for ${vehicleType || "a vehicle"} from Digha Bike Rentals. Looking forward to your confirmation call!`,
     );
     window.open(`https://wa.me/918167751151?text=${message}`, "_blank");
   };
@@ -133,7 +153,9 @@ const BookingForm = ({
 
             {vehicleName && (
               <div className="bg-primary/10 p-3 rounded-lg">
-                <p className="text-sm font-medium">Selected: <span className="text-accent">{vehicleName}</span></p>
+                <p className="text-sm font-medium">
+                  Selected: <span className="text-accent">{vehicleName}</span>
+                </p>
               </div>
             )}
 
@@ -160,9 +182,8 @@ const BookingForm = ({
                       type="button"
                       className={cn(
                         "w-full flex items-center gap-2 px-3 py-2 mt-1 bg-background rounded-lg border border-input text-left text-sm",
-                        !pickupDate && "text-muted-foreground"
-                      )}
-                    >
+                        !pickupDate && "text-muted-foreground",
+                      )}>
                       <CalendarIcon className="w-4 h-4" />
                       {pickupDate ? format(pickupDate, "dd/MM/yy") : "Select"}
                     </button>
@@ -187,7 +208,9 @@ const BookingForm = ({
                   </SelectTrigger>
                   <SelectContent>
                     {timeSlots.map((time) => (
-                      <SelectItem key={time} value={time}>{time}</SelectItem>
+                      <SelectItem key={time} value={time}>
+                        {time}
+                      </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
@@ -204,9 +227,8 @@ const BookingForm = ({
                       type="button"
                       className={cn(
                         "w-full flex items-center gap-2 px-3 py-2 mt-1 bg-background rounded-lg border border-input text-left text-sm",
-                        !dropoffDate && "text-muted-foreground"
-                      )}
-                    >
+                        !dropoffDate && "text-muted-foreground",
+                      )}>
                       <CalendarIcon className="w-4 h-4" />
                       {dropoffDate ? format(dropoffDate, "dd/MM/yy") : "Select"}
                     </button>
@@ -231,7 +253,9 @@ const BookingForm = ({
                   </SelectTrigger>
                   <SelectContent>
                     {timeSlots.map((time) => (
-                      <SelectItem key={time} value={time}>{time}</SelectItem>
+                      <SelectItem key={time} value={time}>
+                        {time}
+                      </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
@@ -283,12 +307,11 @@ const BookingForm = ({
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full h-12 bg-gradient-cta text-primary-foreground font-semibold rounded-xl shadow-cta"
-            >
+              className="w-full h-12 bg-gradient-cta text-primary-foreground font-semibold rounded-xl shadow-cta">
               {isLoading ? (
                 <Loader2 className="w-5 h-5 animate-spin" />
               ) : (
-                "Submit & Verify via WhatsApp"
+                "Submit "
               )}
             </Button>
           </form>
@@ -297,9 +320,10 @@ const BookingForm = ({
         {step === "otp" && (
           <div className="space-y-6 mt-4 text-center">
             <p className="text-muted-foreground">
-              We've sent a verification code to your WhatsApp number <span className="font-medium text-foreground">{whatsapp}</span>
+              We've sent a verification code to your WhatsApp number{" "}
+              <span className="font-medium text-foreground">{whatsapp}</span>
             </p>
-            
+
             <div>
               <Label htmlFor="otp">Enter OTP</Label>
               <Input
@@ -316,8 +340,7 @@ const BookingForm = ({
             <Button
               onClick={handleVerifyOtp}
               disabled={isLoading || otp.length < 4}
-              className="w-full h-12 bg-gradient-cta text-primary-foreground font-semibold rounded-xl shadow-cta"
-            >
+              className="w-full h-12 bg-gradient-cta text-primary-foreground font-semibold rounded-xl shadow-cta">
               {isLoading ? (
                 <Loader2 className="w-5 h-5 animate-spin" />
               ) : (
@@ -327,8 +350,7 @@ const BookingForm = ({
 
             <button
               onClick={() => setStep("form")}
-              className="text-sm text-secondary hover:underline"
-            >
+              className="text-sm text-secondary hover:underline">
               ← Back to form
             </button>
           </div>
@@ -339,15 +361,18 @@ const BookingForm = ({
             <div className="w-20 h-20 rounded-full bg-success/10 flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-10 h-10 text-success" />
             </div>
-            <h3 className="font-heading font-semibold text-lg">Booking Submitted!</h3>
+            <h3 className="font-heading font-semibold text-lg">
+              Booking Submitted!
+            </h3>
             <p className="text-muted-foreground text-sm">
-              Thank you, <span className="font-medium text-foreground">{name}</span>!<br />
-              Our representative will contact you shortly to confirm your booking.
+              Thank you,{" "}
+              <span className="font-medium text-foreground">{name}</span>!<br />
+              Our representative will contact you shortly to confirm your
+              booking.
             </p>
             <Button
               onClick={handleClose}
-              className="bg-gradient-secondary text-secondary-foreground font-semibold px-8 rounded-xl"
-            >
+              className="bg-gradient-secondary text-secondary-foreground font-semibold px-8 rounded-xl">
               Done
             </Button>
           </div>
